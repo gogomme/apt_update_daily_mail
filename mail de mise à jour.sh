@@ -1,6 +1,3 @@
-TEST FIRST COMMIT IN COMMAND LINE
-
-
 #!/bin/bash
 #------------------ Mail MAJ ------------------#
 # [Objectif] : Avertir par mail journalier     #
@@ -25,23 +22,19 @@ fi
 
 
 # Liste les paquets upgradable avec filtre et met le resultat dans un fichier
-#apt list --upgradable | cut -d'/' -f 1 -s > result.txt
-
-# Vérifie si le fichier créer relust.txt est vide
-
-$ResultEmpty -eq false
-[ -s result.txt ] || $ResultEmpty -eq true
-
-if [ $ResultEmpty -eq true ];
-then
-  echo "Il n'y a pas de paquets à mettre à jour"
-  #rm -f result.txt
-else
-  echo "Des paquets sont à mettre à jour, le mail de rappel va etre construit"
-  #rm -f result.txt
-fi
-
+apt list --upgradable | cut -d'/' -f 1 -s > result.txt
 
 # -d = délimiteur ici "/"
 # -f = sélectionner seulement ces champs
 # -s = ne pas afficher les lignes ne contenant pas de délimiteurs, pour ne pas afficher la première ligne 'En train de lister…'
+
+
+# Vérifie si le fichier créer relust.txt est vide
+if [ -s result.txt ]
+then # si le fichier n'est pas vide
+  echo "Des paquets sont à mettre à jour, le mail de rappel va etre construit"
+  #rm -f result.txt
+else # si le fichier est vide
+  echo "Il n'y a pas de paquets à mettre à jour"
+  #rm -f result.txt
+fi
