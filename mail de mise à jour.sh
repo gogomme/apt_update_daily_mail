@@ -1,3 +1,6 @@
+TEST FIRST COMMIT IN COMMAND LINE
+
+
 #!/bin/bash
 #------------------ Mail MAJ ------------------#
 # [Objectif] : Avertir par mail journalier     #
