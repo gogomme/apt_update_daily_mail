@@ -15,7 +15,7 @@ apt update &>/dev/null
 if (( $? == 0 ))
 then
 
-  echo "la commande apt-get s'est bien déroulé"
+  echo "la commande "apt update" s'est bien déroulé"
 else
   echo "La commande c'est mal passé le code erreur est :" $?
 fi
