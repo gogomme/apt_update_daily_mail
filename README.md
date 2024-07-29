@@ -10,13 +10,20 @@ The package manager use is APT, the result is insert in a file and if this file 
 
 ## Requirements
 
-a
+Package SSMTP and MailUtils for send mails.
+
+### Install
+```bash
+sudo apt update && upgrade
+sudo apt install ssmtp mailutils
+```
+### Configure
 
 ## Apply
 
 This script can be used with Crontab for a daily reminder, it is advisable to create a user only authorized to execute this script and the cron.
 
-Exemple of a Crontab for a mail everyday at 22h
+Exemple of a Crontab for a mail everyday at 22h :
 
 ```bash
 0 22 * * * /chemin/vers/votre/script.sh
