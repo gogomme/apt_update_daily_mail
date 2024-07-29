@@ -19,6 +19,16 @@ sudo apt install ssmtp mailutils
 ```
 ### Configure
 
+Configure SSMTP with the right SMTP server and authentification at /etc/ssmtp/ssmtp.conf
+
+```bash
+AuthUser=email@domain.com
+AuthPass=pass or application pass
+mailhub=smtp.server:port
+UseSTARTTLS=YES
+FROM:display name
+```
+
 ## Apply
 
 This script can be used with Crontab for a daily reminder, it is advisable to create a user only authorized to execute this script and the cron.
